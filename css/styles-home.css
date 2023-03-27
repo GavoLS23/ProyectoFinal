@@ -1,0 +1,376 @@
+@import url('https://fonts.googleapis.com/css?family=Poppins:200,300,400,500,600,700,800,900&display=swap');
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+body{
+  min-width: 324px;
+  min-height: 630px;;
+}
+
+.mensaje-sig{
+  
+  position: absolute;
+  width: 60%;
+  height: 15%;
+  background: rgba(255,255,255, 0.6);
+  top: 20em;
+  display: flex;
+  justify-content: center;
+  padding: 1em 2em;
+  text-align: center;
+
+}
+.btn-log-out{
+  position: absolute;
+  background-color: #841816;
+  color: #fff;
+  padding: 4px 7px;
+  border-radius: 3px;
+  text-decoration: none;
+  top: 10px;
+  left: 10px;
+}
+
+.btn-eliminar{
+  background-color: #841816;
+  color: #fff;
+  padding: 4px 7px;
+  border-radius: 3px;
+  text-decoration: none;
+}
+
+.btn-add{
+  font-size: 15px;
+  padding: 0.3em 0.9em;
+  text-decoration: none;
+  color: #fff;
+  font-weight: 400;
+  cursor: pointer;
+  border: none;
+  background-color: #e8641c;
+  border-radius: 3px;
+  
+}
+.btn-add:hover{
+  background-color: #f39200;
+}
+
+.mensaje-sig h3, .mensaje-sig p{
+  padding: 3px 5px;
+}
+
+.container{
+  min-height: 120vh;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-image: linear-gradient(
+      45deg,
+      rgba(0, 0, 20, 0.6),
+      rgba(0, 0, 20, 0.6)
+    ),
+    url(../img/bg1.png);
+    background-attachment: fixed;
+}
+
+.container .saludo{
+  position: absolute;
+  top: 10%;
+  color: #fff;
+  text-shadow: 2px 2px 2px black;
+
+}
+
+/* id=# clase=.*/
+
+#time{
+  position: relative;
+  top: 9em;
+    display: flex;
+    gap: 40px;
+    color: #fff;
+}
+#time div span{
+    position: absolute;
+    font-size: 0.35em;
+    font-weight: 300;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    transform: translate(-50%, -5px);
+}
+#time .circle{
+    position: relative;
+    width: 150px;
+    height: 150px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#time .circle svg{
+    position: relative;
+    width: 150px;
+    height: 150px;
+    transform: rotate(270deg);
+}
+circle{
+    width: 100%;
+    height: 100%;
+    fill: transparent;
+    fill-opacity: 0.75;
+    stroke: #000 ;
+    stroke-width: 4;
+    transform: translate(5px, 5px);
+}
+
+circle:nth-child(2){
+    
+    stroke: var(--clr);
+    
+    stroke-dasharray: calc(70 * 2 * 22 / 7);
+    stroke-dashoffset: 100;
+}
+
+.dot{
+    width: 100%;
+    height: 100%;
+    z-index: 10;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.dot::before{
+    content: '';
+    position: absolute;
+    width: 15px;
+    height: 15px;
+    background: var(--clr);
+    border-radius: 50%;
+    top: -3px;
+    box-shadow: 0 0 20px var(--clr), 0 0 60px var(--clr);
+}
+#time div{
+    position: absolute;
+    text-align: center;
+    font-weight: 500;
+    font-size: 1.5em;
+}
+#time .ap{
+    position: relative;
+    font: 1em;
+    transform: translateX(-20px);
+}
+
+@media screen and (max-width: 502px) {
+    .saludo {
+      font-size: 100%;
+    }
+    #time .circle svg {
+      width: 100px;
+      height: 100px;
+    }
+    #time .circle {
+      width: 100px;
+      height: 100px;
+    }
+    #time {
+      gap: 20px;
+      top: 125px;
+    }
+  
+    #time div span {
+      font-size: 0.35em;
+      font-weight: 300;
+    }
+    #hours,
+    #minutees,
+    #seconds,
+    #time {
+      font-size: 10px;
+    }
+    .subtitulo {
+      width: 60%;
+      font-size: small;
+    }
+    circle:nth-child(2) {
+      stroke: var(--clr);
+      stroke-dasharray: calc(45 * 2 * 22 / 7);
+      stroke-dashoffset: 100;
+    }
+    .mensaje-sig{
+      top: 45%;
+    }
+  
+  }
+  @media screen and (max-width: 791px) {
+    .mensaje-sig{
+      display: block;
+      height: 20%;
+    }
+    .mensaje-sig p a{
+      font-size: 15px;
+    }
+    .table{
+      font-size: xx-small;
+    }
+    .container-t{
+      top: 29em !important;
+    }
+  }
+ 
+
+  @media screen and (min-width: 791px) {
+    .mensaje-sig p a{
+      font-size: 15px;
+    }
+    
+  }
+  
+
+  @media screen and (max-width: 457px) {
+    .mensaje-sig p a{
+      font-size: 12px;
+    }
+    .mensaje-sig{
+      height: 30%;
+    }
+    .container-t{
+      top: 34em !important;
+    }
+  }
+
+  /*Modal para agregar alarma*/
+  .modalmask {
+    position: fixed;
+    font-family: Arial, sans-serif;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background: rgba(0, 0, 0, 0.4);
+    z-index: 99999;
+    opacity: 0;
+    -webkit-transition: opacity 400ms ease-in;
+    -moz-transition: opacity 400ms ease-in;
+    transition: opacity 400ms ease-in;
+    pointer-events: none;
+  }
+  .modalmask:target {
+    opacity: 1;
+    pointer-events: auto;
+  }
+  
+  /*Formato de la ventana*/
+  .modalbox {
+    width: 420px;
+    position: relative;
+    padding: 15px 20px 13px 20px;
+    background: #fff;
+    border-radius: 3px;
+    -webkit-transition: all 500ms ease-in;
+    -moz-transition: all 500ms ease-in;
+    transition: all 500ms ease-in;
+    color: #000;
+  }
+  
+  .formulario-alarma input[type="time"] {
+    width: 100%;
+    margin: auto;
+    padding: 0.3rem 0.5rem;
+    font-size: 2em;
+  }
+  
+  .formulario-alarma input[type="checkbox"] {
+    margin: auto;
+    padding: 0.3rem 0.5rem;
+    font-size: 2em;
+  }
+  .formulario-alarma label {
+    font-size: 0.9em;
+  }
+  .formulario-alarma input[type="checkbox"]:checked {
+    background-color: rgba(232, 100, 28, 0.4);
+  }
+  
+  .formulario-alarma .subti {
+    padding: 1em;
+  }
+  
+  /*Movimientos modaaal*/
+  
+  .rotate {
+    margin: 10% auto;
+    -webkit-transform: scale(-5, -5);
+    transform: scale(-5, -5);
+  }
+  
+  .modalmask:target .rotate {
+    transform: rotate(360deg) scale(1, 1);
+    -webkit-transform: rotate(360deg) scale(1, 1);
+  }
+  
+  /*Boton de cerrar*/
+  .close {
+    color: #222;
+    line-height: 25px;
+    position: absolute;
+    right: 6px;
+    text-align: center;
+    top: 8px;
+    width: 24px;
+    text-decoration: none;
+    font-weight: bold;
+    border-radius: 3px;
+    font-size: 30px;
+  }
+  
+  .close:hover {
+    color: #841816;
+  }
+
+/*Estilos de tabla*/
+
+.container-t {
+  overflow-y: scroll;
+  width: auto;
+  height: 300px;
+  position: absolute;
+  top: 28rem;
+  border: solid 1px rgba(255, 255, 255, 0.3);
+  background-color: rgba(0, 0, 20, 0.2);
+}
+
+table {
+  color: #fff;
+  font-size: 18px;
+  table-layout: fixed;
+  border-collapse: collapse;
+  overflow: scroll;
+}
+thead {
+  background-color: rgba(255, 255, 255, 0.4);
+}
+
+th {
+  padding: 20px 15px;
+  font-weight: 700;
+  text-transform: uppercase;
+}
+td {
+  padding: 15px;
+  border-bottom: solid 1px rgba(255, 255, 255, 0.3);
+}
+tbody tr {
+  cursor: pointer;
+}
+tbody td:hover {
+  background-color: rgba(157, 157, 166, 0.4);
+}
